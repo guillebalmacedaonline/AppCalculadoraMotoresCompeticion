@@ -42,7 +42,7 @@ const CAP = ({ navigation }) => {
       </TouchableOpacity>
 
       <Text style={styles.textResultado}>RESULTADO: <Text>{resultado}</Text></Text>
-      
+            
     </View>
   );
 };

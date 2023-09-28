@@ -40,6 +40,12 @@ export const styles = StyleSheet.create({
       margin: 15,
       fontWeight: 'bold', 
       color: 'darkred'
+    },
+
+    footer: {
+      fontSize: 12,
+      fontWeight: 'bold',
+      textAlign: 'center'
     }
   });
   

@@ -6,7 +6,7 @@ import MainStack from './navigator/MainStack';
 
 const App = () => {
   return (
-      <MainStack></MainStack>
+      <MainStack></MainStack>      
   );
 };
 
