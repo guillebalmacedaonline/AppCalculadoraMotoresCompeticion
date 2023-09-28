@@ -2,52 +2,50 @@ import React, { useState, useRef } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import {styles, buttonSeleccionarStyles} from '../../complements/GeneralStyle'
 
-const RPMM = ({ navigation }) => {
+const CRC = ({ navigation }) => {
   const [selectedValue, seleccionItem] = useState(null);
 
-  const [carrera, onChangeCarrera] = React.useState('');
-  const [ms, onChangeMs] = React.useState('');
+  const [cilindrada, onChangeCilindrada] = React.useState('');
+  const [camaraCombustion, onChangeCamaraCombustion] = React.useState('');
   const [resultado, onChangeResultado] = React.useState('SIN CALCULAR');
   const inputRef = useRef(null);
 
-  const calcularMaximasRPM = () => {
+  const calcularRelacionCompresion = () => {
     console.log('¡La función ha sido llamada!');
-    resultadoTemp = parseFloat(ms.replace(",", ".")) * 30000 / parseFloat(carrera.replace(",", "."));
-    onChangeResultado(resultadoTemp+" RPM Máx");    
+    var resultadoTemp = 'SIN CALCULAR';
+    resultadoTemp = (parseFloat(cilindrada.replace(",", ".")) + parseFloat(camaraCombustion.replace(",", "."))) / parseFloat(camaraCombustion.replace(",", "."));
+    onChangeResultado(resultadoTemp.toFixed(2)+" :1");    
   };
 
   return (
     <View style={styles.container}>
-        
-      <Text style={styles.title}>Calculo Máximas RPM </Text>
+      <Text style={styles.title}>Cálculo de Relación de Compresión </Text>
 
       <TextInput
         ref={inputRef}
         style={styles.input}
-        onChangeText={onChangeMs}
-        value={ms}
-        placeholder="M/S"
+        onChangeText={onChangeCilindrada}
+        value={cilindrada}
+        placeholder="Cilindrada"
         keyboardType="numeric"
       />
-      <Text style={styles.textDetail}>MS obtenido en el calculo de Velocidad Media de Piston.</Text> 
-      
+      <Text style={styles.textDetail}>Cilindrada obtenido del cálculo de cilindrada.</Text>     
+
       <TextInput
         ref={inputRef}
         style={styles.input}
-        onChangeText={onChangeCarrera}
-        value={carrera}
-        placeholder="Carrera del piston"
+        onChangeText={onChangeCamaraCombustion}
+        value={camaraCombustion}
+        placeholder="Cámara de Combustión"
         keyboardType="numeric"
       />
-      <Text style={styles.textDetail}>Carrera del Piston en cm</Text>
-
-           
+      <Text style={styles.textDetail}>Cm3 que ingresan en la Cámara de Combustión.</Text>      
 
       <TouchableOpacity
         style={buttonSeleccionarStyles.button}
         onPress={() => {
           // Coloca aquí la función que se ejecutará cuando se presione el botón
-          calcularMaximasRPM();
+          calcularRelacionCompresion();
           inputRef.current.blur();
         }}
       >
@@ -60,5 +58,4 @@ const RPMM = ({ navigation }) => {
   );
 };
 
-
-export default RPMM;
+export default CRC;

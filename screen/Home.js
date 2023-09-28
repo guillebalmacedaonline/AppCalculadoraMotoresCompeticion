@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 const Home = ({ navigation }) => {
-  const [selectedValue, seleccionItem] = useState("VMP");
+  const [selectedValue, seleccionItem] = useState("CC");
 
   return (
     <View style={styles.container}>
@@ -14,10 +14,14 @@ const Home = ({ navigation }) => {
         onValueChange={(itemValue, itemIndex) =>
           seleccionItem(itemValue)
         }>
+        <Picker.Item label="Cálculo de Cilindrada" value="CC" />
         <Picker.Item label="Velocidad Media Piston" value="VMP" />
         <Picker.Item label="RPM Máximas" value="RPMM" />
         <Picker.Item label="Casquillos - Cálculo de Venturi" value="CCV" />
         <Picker.Item label="Cálculo Velocidad del Conducto / Diámetro de Válvula" value="CVC" />
+        <Picker.Item label="Cálculo Medida del Conducto" value="CMC" />
+        <Picker.Item label="Cálculo Area de Piston" value="CAP" />
+        <Picker.Item label="Cálculo Relación de Compresion" value="CRC" />
       </Picker>
 
       <TouchableOpacity
@@ -37,6 +41,18 @@ const Home = ({ navigation }) => {
                 break;
             case "CVC":
                 navigation.navigate('CVC');
+                break;
+            case "CC":
+                navigation.navigate('CC');
+                break;
+            case "CMC":
+                navigation.navigate('CMC');
+                break;
+            case "CAP":
+                navigation.navigate('CAP');
+                break;
+            case "CRC":
+                navigation.navigate('CRC');
                 break;
           
             default:

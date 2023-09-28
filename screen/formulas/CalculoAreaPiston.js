@@ -2,52 +2,39 @@ import React, { useState, useRef } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
 import {styles, buttonSeleccionarStyles} from '../../complements/GeneralStyle'
 
-const RPMM = ({ navigation }) => {
+const CAP = ({ navigation }) => {
   const [selectedValue, seleccionItem] = useState(null);
 
-  const [carrera, onChangeCarrera] = React.useState('');
-  const [ms, onChangeMs] = React.useState('');
+  const [diametroPiston, onChangeDiametroPiston] = React.useState('');
   const [resultado, onChangeResultado] = React.useState('SIN CALCULAR');
   const inputRef = useRef(null);
 
-  const calcularMaximasRPM = () => {
+  const calcularAreaPiston = () => {
     console.log('¡La función ha sido llamada!');
-    resultadoTemp = parseFloat(ms.replace(",", ".")) * 30000 / parseFloat(carrera.replace(",", "."));
-    onChangeResultado(resultadoTemp+" RPM Máx");    
+    var resultadoTemp = 'SIN CALCULAR';
+    resultadoTemp = (Math.PI * parseFloat(diametroPiston.replace(",", ".")) * parseFloat(diametroPiston.replace(",", "."))) / 4;
+    onChangeResultado(resultadoTemp.toFixed(2)+" mm3");    
   };
 
   return (
     <View style={styles.container}>
-        
-      <Text style={styles.title}>Calculo Máximas RPM </Text>
+      <Text style={styles.title}>Cálculo de Área de Pistón </Text>
 
       <TextInput
         ref={inputRef}
         style={styles.input}
-        onChangeText={onChangeMs}
-        value={ms}
-        placeholder="M/S"
+        onChangeText={onChangeDiametroPiston}
+        value={diametroPiston}
+        placeholder="Diametro Piston"
         keyboardType="numeric"
       />
-      <Text style={styles.textDetail}>MS obtenido en el calculo de Velocidad Media de Piston.</Text> 
-      
-      <TextInput
-        ref={inputRef}
-        style={styles.input}
-        onChangeText={onChangeCarrera}
-        value={carrera}
-        placeholder="Carrera del piston"
-        keyboardType="numeric"
-      />
-      <Text style={styles.textDetail}>Carrera del Piston en cm</Text>
-
-           
+      <Text style={styles.textDetail}>Diametro del piston en Cm</Text>      
 
       <TouchableOpacity
         style={buttonSeleccionarStyles.button}
         onPress={() => {
           // Coloca aquí la función que se ejecutará cuando se presione el botón
-          calcularMaximasRPM();
+          calcularAreaPiston();
           inputRef.current.blur();
         }}
       >
@@ -60,5 +47,4 @@ const RPMM = ({ navigation }) => {
   );
 };
 
-
-export default RPMM;
+export default CAP;
