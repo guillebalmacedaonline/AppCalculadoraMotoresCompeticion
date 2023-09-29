@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import Footer from '/complements/Footer';
+import Footer from '../complements/Footer';
 
 const Home = ({ navigation }) => {
   const [selectedValue, seleccionItem] = useState("CC");
