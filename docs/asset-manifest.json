@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/static/js/main.9c7ebf2c.js",
+    "static/js/293.49081783.js": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/static/js/293.49081783.js",
+    "favicon.ico": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/favicon.ico",
+    "index.html": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/index.html",
+    "favicon-32.png": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/favicon-32.png",
+    "favicon-16.png": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/favicon-16.png",
+    "manifest.json": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/manifest.json",
+    "serve.json": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/serve.json",
+    "main.9c7ebf2c.js.map": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/static/js/main.9c7ebf2c.js.map",
+    "293.49081783.js.map": "/guillebalmacedaonline/AppCalculadoraMotoresCompeticion/static/js/293.49081783.js.map"
+  },
+  "entrypoints": [
+    "static/js/293.49081783.js",
+    "static/js/main.9c7ebf2c.js"
+  ]
+}
